@@ -1,0 +1,71 @@
+model:
+  name: xgboost
+  version: "1.0.0"
+  file: xgboost_model.joblib
+  scaler_file: scaler.joblib
+  metadata_file: model_metadata.json
+
+prediction:
+  unit: transaction
+  best_threshold: 0.85
+  high_priority_threshold: 0.70
+  medium_priority_threshold: 0.40
+
+features:
+  count: 16
+  names:
+    - TX_AMOUNT
+    - TIMESTAMP
+    - sender_tx_count
+    - receiver_tx_count
+    - sender_out_volume
+    - receiver_in_volume
+    - sender_avg_amount
+    - receiver_avg_amount
+    - sender_n_counterparties
+    - receiver_n_counterparties
+    - sender_fraud_account
+    - receiver_fraud_account
+    - sender_tx_behavior
+    - receiver_tx_behavior
+    - sender_init_balance
+    - amount_to_sender_avg_ratio
+
+dataset:
+  name: IBM AMLSim
+  total_transactions: 12476012
+  total_accounts: 100000
+  fraud_rate_pct: 0.137
+  timestamp_range: [0, 199]
+  fraud_patterns: [cycle, fan_in]
+
+split:
+  type: chronological
+  train_end_timestamp: 139
+  val_end_timestamp: 159
+  test_start_timestamp: 160
+  train_rows: 8741365
+  val_rows: 1244008
+  test_rows: 2490639
+  seed: 42
+
+training:
+  tuner: optuna
+  sampler: TPE
+  n_trials: 15
+  objective_metric: pr_auc
+  class_imbalance_strategy: scale_pos_weight
+
+evaluation:
+  test_precision: 0.9966
+  test_recall: 0.9978
+  test_f1: 0.9972
+  test_pr_auc: 0.9991
+  test_roc_auc: 0.9999957
+  tp: 3562
+  fp: 12
+  fn: 8
+  tn: 2487057
+  note: >
+    Near-perfect metrics reflect AMLSim structured synthetic patterns.
+    Real-world AML models achieve F1 of 0.05-0.40 (see docs/benchmark_references.md).

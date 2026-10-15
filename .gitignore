@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Large data files — DO NOT commit
+100Kvertices-10Medges/
+ml/data/processed/
+ml/data/raw/
+outputs/dim_reduction/
+outputs/mlruns/
+
+# Secrets
+.env
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Docker
+*.tar
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# SQLite DB (regenerated at startup)
+backend/data/*.db
+
+# HF Space pycache
+hf_space/__pycache__/
+streamlit_app/__pycache__/
+
+# Temp files
+encode_figs.py
+hf_space/figures_b64.json

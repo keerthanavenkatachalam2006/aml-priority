@@ -1,0 +1,32 @@
+{
+  "accounts.csv": {
+    "ACCOUNT_ID": "Integer unique account identifier (0-99999)",
+    "CUSTOMER_ID": "Customer identifier string (C_0 to C_99999)",
+    "INIT_BALANCE": "Initial account balance in USD",
+    "COUNTRY": "Country code (all US in this dataset)",
+    "ACCOUNT_TYPE": "Account type (all 'I' = Individual)",
+    "IS_FRAUD": "Whether account participates in simulated fraud scheme",
+    "TX_BEHAVIOR_ID": "Transaction behaviour model ID (1-5)"
+  },
+  "alerts.csv": {
+    "ALERT_ID": "Unique alert identifier",
+    "ALERT_TYPE": "Pattern type: 'cycle' or 'fan_in'",
+    "IS_FRAUD": "Always True in alerts.csv (only fraudulent alerts recorded)",
+    "TX_ID": "Transaction ID triggering this alert",
+    "SENDER_ACCOUNT_ID": "Sending account",
+    "RECEIVER_ACCOUNT_ID": "Receiving account",
+    "TX_TYPE": "Transaction type (TRANSFER)",
+    "TX_AMOUNT": "Amount",
+    "TIMESTAMP": "Simulation step"
+  },
+  "transactions.csv": {
+    "TX_ID": "Unique transaction ID (1 to ~12.5M)",
+    "SENDER_ACCOUNT_ID": "Sender account (0-99999)",
+    "RECEIVER_ACCOUNT_ID": "Receiver account (0-99999)",
+    "TX_TYPE": "Always TRANSFER",
+    "TX_AMOUNT": "Amount in USD",
+    "TIMESTAMP": "Simulation step 0-199 (treat as day index)",
+    "IS_FRAUD": "Ground-truth: transaction is part of simulated laundering scheme",
+    "ALERT_ID": "Alert group if flagged, else -1"
+  }
+}

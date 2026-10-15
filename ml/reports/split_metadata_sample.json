@@ -1,0 +1,30 @@
+{
+  "train_end_timestamp": 139,
+  "val_end_timestamp": 159,
+  "train_rows": 200000,
+  "val_rows": 0,
+  "test_rows": 0,
+  "train_fraud_count": 304,
+  "val_fraud_count": 0,
+  "test_fraud_count": 0,
+  "feature_cols": [
+    "TX_AMOUNT",
+    "TIMESTAMP",
+    "sender_tx_count",
+    "receiver_tx_count",
+    "sender_out_volume",
+    "receiver_in_volume",
+    "sender_avg_amount",
+    "receiver_avg_amount",
+    "sender_n_counterparties",
+    "receiver_n_counterparties",
+    "sender_fraud_account",
+    "receiver_fraud_account",
+    "sender_tx_behavior",
+    "receiver_tx_behavior",
+    "sender_init_balance",
+    "amount_to_sender_avg_ratio"
+  ],
+  "target_col": "IS_FRAUD",
+  "sample_mode": true
+}

@@ -1,0 +1,14 @@
+pandas>=2.0
+numpy>=1.26
+pyarrow>=17.0
+scikit-learn>=1.5
+xgboost>=2.1
+joblib>=1.4
+optuna>=3.6
+py7zr>=0.20
+matplotlib>=3.7
+seaborn>=0.12
+shap>=0.45
+umap-learn>=0.5
+mlflow>=3.0
+plotly>=5.0

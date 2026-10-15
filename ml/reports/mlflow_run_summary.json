@@ -1,0 +1,24 @@
+{
+  "xgboost": {
+    "val_metrics": {
+      "precision": 1.0,
+      "recall": 0.9970379146919431,
+      "f1": 0.9985167606051617,
+      "pr_auc": 0.9993866791658356,
+      "roc_auc": 0.9999958221988885,
+      "tp": 1683,
+      "fp": 0,
+      "fn": 5,
+      "tn": 1242320,
+      "threshold": 0.7500000000000001
+    },
+    "run_id": "d77bddd90ac54e7e8482d1f81cb5aaac"
+  },
+  "xgboost_extended": {
+    "run_id": "bd6805b51c864113811b6844d6b313bc",
+    "n_trials_total": 15,
+    "val_f1": 0.9985176400830121,
+    "val_pr_auc": 0.999422530093727,
+    "retrained": true
+  }
+}

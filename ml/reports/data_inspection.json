@@ -1,0 +1,197 @@
+{
+  "accounts": {
+    "file": "accounts.csv",
+    "rows_sampled": 100000,
+    "columns": {
+      "ACCOUNT_ID": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 100000,
+        "min": 0.0,
+        "max": 99999.0,
+        "mean": 49999.5
+      },
+      "CUSTOMER_ID": {
+        "dtype": "str",
+        "null_count": 0,
+        "unique_count": 100000,
+        "sample_values": [
+          "C_0",
+          "C_1",
+          "C_2",
+          "C_3",
+          "C_4"
+        ]
+      },
+      "INIT_BALANCE": {
+        "dtype": "float64",
+        "null_count": 0,
+        "unique_count": 39706,
+        "min": 100.0,
+        "max": 599.99,
+        "mean": 279.888703
+      },
+      "COUNTRY": {
+        "dtype": "str",
+        "null_count": 0,
+        "unique_count": 1,
+        "sample_values": [
+          "US"
+        ]
+      },
+      "ACCOUNT_TYPE": {
+        "dtype": "str",
+        "null_count": 0,
+        "unique_count": 1,
+        "sample_values": [
+          "I"
+        ]
+      },
+      "IS_FRAUD": {
+        "dtype": "bool",
+        "null_count": 0,
+        "unique_count": 2,
+        "sample_values": [
+          false,
+          true
+        ]
+      },
+      "TX_BEHAVIOR_ID": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 5,
+        "min": 1.0,
+        "max": 5.0,
+        "mean": 3.0
+      }
+    }
+  },
+  "alerts": {
+    "file": "alerts.csv",
+    "rows_sampled": 17052,
+    "columns": {
+      "ALERT_ID": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 3910,
+        "min": 1.0,
+        "max": 3999.0,
+        "mean": 2116.359195402299
+      },
+      "ALERT_TYPE": {
+        "dtype": "str",
+        "null_count": 0,
+        "unique_count": 2,
+        "sample_values": [
+          "cycle",
+          "fan_in"
+        ]
+      },
+      "IS_FRAUD": {
+        "dtype": "bool",
+        "null_count": 0,
+        "unique_count": 1,
+        "sample_values": [
+          true
+        ]
+      },
+      "TX_ID": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 17052,
+        "min": 188.0,
+        "max": 12475853.0,
+        "mean": 6276043.888752053
+      },
+      "SENDER_ACCOUNT_ID": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 14923,
+        "min": 13.0,
+        "max": 99998.0,
+        "mean": 50112.75621627962
+      },
+      "RECEIVER_ACCOUNT_ID": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 10391,
+        "min": 13.0,
+        "max": 99997.0,
+        "mean": 49706.032371569316
+      },
+      "TX_TYPE": {
+        "dtype": "str",
+        "null_count": 0,
+        "unique_count": 1,
+        "sample_values": [
+          "TRANSFER"
+        ]
+      },
+      "TX_AMOUNT": {
+        "dtype": "float64",
+        "null_count": 0,
+        "unique_count": 956,
+        "min": 2.5,
+        "max": 20.0,
+        "mean": 10.052406169364298
+      },
+      "TIMESTAMP": {
+        "dtype": "int64",
+        "null_count": 0,
+        "unique_count": 200,
+        "min": 0.0,
+        "max": 199.0,
+        "mean": 100.06650246305419
+      }
+    }
+  },
+  "transactions": {
+    "file": "transactions.csv",
+    "total_rows": 12476012,
+    "fraud_rows": 17052,
+    "fraud_rate_pct": 0.1367,
+    "timestamp_min": 0,
+    "timestamp_max": 199,
+    "amount_min": 0.0,
+    "amount_max": 21474836.47,
+    "amount_mean": 22642.879319386673,
+    "tx_types": {
+      "TRANSFER": 12476012
+    },
+    "rows_with_alert": 17052,
+    "columns": {
+      "TX_ID": {
+        "dtype": "int64",
+        "description": "Unique transaction identifier"
+      },
+      "SENDER_ACCOUNT_ID": {
+        "dtype": "int64",
+        "description": "Sending account"
+      },
+      "RECEIVER_ACCOUNT_ID": {
+        "dtype": "int64",
+        "description": "Receiving account"
+      },
+      "TX_TYPE": {
+        "dtype": "str",
+        "description": "Transaction type (TRANSFER only)"
+      },
+      "TX_AMOUNT": {
+        "dtype": "float64",
+        "description": "Transaction amount in USD"
+      },
+      "TIMESTAMP": {
+        "dtype": "int64",
+        "description": "Simulation step (0-199, ~day)"
+      },
+      "IS_FRAUD": {
+        "dtype": "bool",
+        "description": "Ground-truth fraud label (simulated AMLSim)"
+      },
+      "ALERT_ID": {
+        "dtype": "int64",
+        "description": "Alert group ID, -1 = no alert"
+      }
+    }
+  }
+}
