@@ -1,0 +1,158 @@
+{
+  "creditcard_fraud": {
+    "dataset": "CreditCardFraud",
+    "train_rows": 227845,
+    "test_rows": 56962,
+    "fraud_rate_pct": 0.183,
+    "logistic_regression": {
+      "precision": 0.3605,
+      "recall": 0.8267,
+      "f1": 0.502,
+      "pr_auc": 0.758,
+      "roc_auc": 0.9863,
+      "tp": 62,
+      "fp": 110,
+      "fn": 13,
+      "tn": 56777,
+      "train_time_s": 0.75,
+      "threshold": 0.9000000000000001
+    },
+    "xgboost": {
+      "precision": 0.9661,
+      "recall": 0.76,
+      "f1": 0.8507,
+      "pr_auc": 0.8045,
+      "roc_auc": 0.9852,
+      "tp": 57,
+      "fp": 2,
+      "fn": 18,
+      "tn": 56885,
+      "train_time_s": 2.23,
+      "tune_time_s": 18.05,
+      "threshold": 0.7000000000000001,
+      "n_optuna_trials": 5,
+      "optuna_best_pr_auc": 0.804501,
+      "best_params": {
+        "n_estimators": 106,
+        "max_depth": 7,
+        "learning_rate": 0.19057174434080473,
+        "subsample": 0.6849356442713105,
+        "colsample_bytree": 0.5909124836035503,
+        "scale_pos_weight": 545.3908872901678,
+        "random_state": 42,
+        "n_jobs": -1,
+        "tree_method": "hist"
+      },
+      "optuna_trials": [
+        {
+          "trial": 0,
+          "pr_auc": 0.795476,
+          "n_estimators": 212,
+          "max_depth": 7
+        },
+        {
+          "trial": 1,
+          "pr_auc": 0.776022,
+          "n_estimators": 146,
+          "max_depth": 3
+        },
+        {
+          "trial": 2,
+          "pr_auc": 0.804501,
+          "n_estimators": 106,
+          "max_depth": 7
+        },
+        {
+          "trial": 3,
+          "pr_auc": 0.785826,
+          "n_estimators": 155,
+          "max_depth": 4
+        },
+        {
+          "trial": 4,
+          "pr_auc": 0.79203,
+          "n_estimators": 284,
+          "max_depth": 3
+        }
+      ]
+    }
+  },
+  "elliptic_bitcoin": {
+    "dataset": "EllipticBitcoin",
+    "train_rows": 37251,
+    "test_rows": 9313,
+    "fraud_rate_pct": 10.931,
+    "logistic_regression": {
+      "precision": 0.4794,
+      "recall": 0.4926,
+      "f1": 0.4859,
+      "pr_auc": 0.3739,
+      "roc_auc": 0.8719,
+      "tp": 233,
+      "fp": 253,
+      "fn": 240,
+      "tn": 8587,
+      "train_time_s": 1.02,
+      "threshold": 0.9000000000000001
+    },
+    "xgboost": {
+      "precision": 0.9554,
+      "recall": 0.5433,
+      "f1": 0.6927,
+      "pr_auc": 0.7602,
+      "roc_auc": 0.9591,
+      "tp": 257,
+      "fp": 12,
+      "fn": 216,
+      "tn": 8828,
+      "train_time_s": 4.0,
+      "tune_time_s": 11.66,
+      "threshold": 0.7000000000000001,
+      "n_optuna_trials": 5,
+      "optuna_best_pr_auc": 0.76017,
+      "best_params": {
+        "n_estimators": 212,
+        "max_depth": 7,
+        "learning_rate": 0.14518497439122724,
+        "subsample": 0.8394633936788146,
+        "colsample_bytree": 0.5780093202212182,
+        "scale_pos_weight": 8.148084479371317,
+        "random_state": 42,
+        "n_jobs": -1,
+        "tree_method": "hist"
+      },
+      "optuna_trials": [
+        {
+          "trial": 0,
+          "pr_auc": 0.76017,
+          "n_estimators": 212,
+          "max_depth": 7
+        },
+        {
+          "trial": 1,
+          "pr_auc": 0.715951,
+          "n_estimators": 146,
+          "max_depth": 3
+        },
+        {
+          "trial": 2,
+          "pr_auc": 0.725864,
+          "n_estimators": 106,
+          "max_depth": 7
+        },
+        {
+          "trial": 3,
+          "pr_auc": 0.6996,
+          "n_estimators": 155,
+          "max_depth": 4
+        },
+        {
+          "trial": 4,
+          "pr_auc": 0.670685,
+          "n_estimators": 284,
+          "max_depth": 3
+        }
+      ]
+    }
+  }
+}
