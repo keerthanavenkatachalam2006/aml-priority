@@ -40,7 +40,7 @@ if [ -d "aml-priority" ]; then
     git pull
 else
     # Replace with your actual GitHub repo URL
-    git clone https://github.com/YOUR_GITHUB_USERNAME/aml-priority.git
+    git clone https://github.com/keerthanavenkatachalam2006/aml-priority.git
     cd aml-priority
 fi
 
